@@ -1,5 +1,18 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<form id="frmEdit" name="EditForm" novalidate="">
+    <div>
+        <table border="2">
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Price</th>
+            </tr>
+            <tr ng-repeat="car in cars">
+                <td>{{ car.make }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.year }}</td>
+                <td>{{ car.price | currency : amount : symbol }} </td>
+            </tr>
+        </table>
+    </div>
+</form>
